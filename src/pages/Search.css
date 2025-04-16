@@ -104,7 +104,6 @@ button:disabled {
   opacity: 1;
 }
 
-/* Optional: style added state specifically */
 .added-button {
   background-color: #5f5fff;
   color: white;

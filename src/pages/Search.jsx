@@ -1,8 +1,8 @@
 import React from 'react';
 import './Search.css';
-import placeholderImg from '../assets/uva-campus.jpg';
+import placeholderImg from '../assets/uva-campus.jpg'; // placeholder image
 
-function Search({ addToList, list }) {
+function Search({ addToList, myList }) {
   const colleges = [
     {
       name: 'University of Virginia',
@@ -41,7 +41,7 @@ function Search({ addToList, list }) {
       />
       <div className="college-list">
         {colleges.map((college, index) => {
-          const isAdded = list.some(item => item.name === college.name);
+          const isAdded = myList.some(c => c.name === college.name);
           return (
             <div className="college-card" key={index}>
               <img src={college.image} alt={college.name} />
@@ -52,13 +52,9 @@ function Search({ addToList, list }) {
                 <p>{college.type}</p>
                 <p>Estimated Cost: {college.cost}</p>
                 {isAdded ? (
-                  <button className="added-button" disabled>
-                    Added ✓
-                  </button>
+                  <button className="added">✔ Added</button>
                 ) : (
-                  <button onClick={() => addToList(college)}>
-                    Add to My List
-                  </button>
+                  <button onClick={() => addToList(college)}>Add to My List</button>
                 )}
               </div>
             </div>

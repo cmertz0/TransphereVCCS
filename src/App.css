@@ -1,4 +1,4 @@
-/* Global Styles */
+/* global styles */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -12,7 +12,7 @@ body {
   min-height: 100vh;
 }
 
-/* Header */
+/* header - very glitchy for some reason, will come back*/
 .navbar {
   background-color: #2a2a40;
   width: 100%;
@@ -22,19 +22,20 @@ body {
   align-items: center;
 }
 
-/* Left-aligned brand */
+
 .brand {
+  flex-shrink: 0;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: bold;
   color: white;
-  justify-self: start;
 }
 
-/* Centered nav links */
+
 .nav-links {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  flex-grow: 1;
 }
 
 .nav-links a {
@@ -58,8 +59,127 @@ body {
   transform: scaleX(1);
 }
 
-/* Main content */
 .main {
   padding: 2rem;
   flex-grow: 1;
 }
+
+.top-right-auth {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
+.top-right-auth img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  transition: transform 0.2s ease;
+}
+
+.top-right-auth img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.top-right-auth button {
+  background-color: #5f5fff;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.top-right-auth button:hover {
+  background-color: #4a4ad4;
+}
+
+.auth-icon {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.auth-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+  margin-left: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.auth-icon img:hover {
+  transform: scale(1.05);
+}
+
+.auth-icon button {
+  background-color: #5f5fff;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-icon button:hover {
+  background-color: #4a4ad4;
+}
+
+.auth-button {
+  flex-shrink: 0;
+}
+
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #2a2a40;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  color: white;
+  z-index: 100;
+  min-width: 200px;
+}
+
+.profile-dropdown p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.profile-dropdown button {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: #5f5fff;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.profile-dropdown button:hover {
+  background-color: #4a4ad4;
+}
+

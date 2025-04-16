@@ -19,10 +19,10 @@
     transition: box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
-    border-radius: 0px; /* Flat corners */
+    border-radius: 0px; /* flat corner */
   }
   
-  /* On hover, show black glow and button */
+  /* with mouse hover, show black glow and button */
   .hero-overlay:hover {
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
   }
@@ -37,7 +37,7 @@
     margin-bottom: 2rem;
   }
   
-  /* Button */
+  /* button - used on search + home pages */
   .hero-button {
     background-color: #5f5fff;
     color: white;
@@ -54,7 +54,7 @@
     transition: transform 0.4s ease, opacity 0.4s ease;
   }
   
-  /* Slide button up on hover */
+  /* slide button up on hover */
   .hero-overlay:hover .hero-button {
     transform: translate(-50%, 0%);
     opacity: 1;
