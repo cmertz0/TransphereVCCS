@@ -1,0 +1,62 @@
+.hero {
+    position: relative;
+    background-image: url('/uva-campus.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    padding: 3rem;
+    text-align: center;
+    color: #ffffff;
+    max-width: 800px;
+    width: 90%;
+    transition: box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px; /* Flat corners */
+  }
+  
+  /* On hover, show black glow and button */
+  .hero-overlay:hover {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  }
+  
+  .hero-overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-overlay p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Button */
+  .hero-button {
+    background-color: #5f5fff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translate(-50%, 200%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+  
+  /* Slide button up on hover */
+  .hero-overlay:hover .hero-button {
+    transform: translate(-50%, 0%);
+    opacity: 1;
+  }
+  

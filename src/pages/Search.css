@@ -1,0 +1,112 @@
+
+.search-page {
+  padding: 2rem;
+  background-color: #1e1e2f;
+  min-height: 100vh;
+  color: white;
+}
+
+.search-input {
+  display: block;
+  margin: 0 auto 2rem auto;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  border: none;
+  width: 60%;
+  max-width: 500px;
+  font-size: 1rem;
+}
+
+.college-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.college-card {
+  background-color: #2a2a40;
+  border-radius: 12px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.college-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.college-card img {
+  width: 200px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.college-details {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.college-details h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+.college-details p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: #cccccc;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #5f5fff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4a4ad4;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #5f5fff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #4a4ad4;
+}
+
+button:disabled {
+  background-color: #5f5fff;
+  cursor: default;
+  opacity: 1;
+}
+
+/* Optional: style added state specifically */
+.added-button {
+  background-color: #5f5fff;
+  color: white;
+  font-weight: bold;
+}
