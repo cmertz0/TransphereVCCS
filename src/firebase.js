@@ -12,7 +12,6 @@ import {
   getDoc
 } from "firebase/firestore";
 
-// ✅ Your actual Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyAF_31zqsCw3NPKRpd3IZ0lcMmjlEGzwjQ",
   authDomain: "transphere-vccs.firebaseapp.com",
@@ -23,19 +22,19 @@ const firebaseConfig = {
   measurementId: "G-W49WN456H6"
 };
 
-// ✅ Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// ✅ Auth
+// auth
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 const signIn = () => signInWithPopup(auth, provider);
 const logOut = () => signOut(auth);
 
-// ✅ Firestore
+// firestore
 const db = getFirestore(app);
 
+// user college List
 const saveUserList = async (userId, list) => {
   await setDoc(doc(db, "userLists", userId), { list });
 };
@@ -45,6 +44,16 @@ const loadUserList = async (userId) => {
   return docSnap.exists() ? docSnap.data().list : [];
 };
 
+// stats from user (new)
+const saveUserStats = async (userId, stats) => {
+  await setDoc(doc(db, "userStats", userId), { stats });
+};
+
+const loadUserStats = async (userId) => {
+  const docSnap = await getDoc(doc(db, "userStats", userId));
+  return docSnap.exists() ? docSnap.data().stats : null;
+};
+
 export {
   auth,
   provider,
@@ -52,5 +61,7 @@ export {
   logOut,
   db,
   saveUserList,
-  loadUserList
+  loadUserList,
+  saveUserStats,
+  loadUserStats
 };

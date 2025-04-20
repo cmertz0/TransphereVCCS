@@ -1,0 +1,31 @@
+.your-stats-form {
+    background-color: #2a2a40;
+    padding: 1.5rem;
+    border-radius: 12px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .your-stats-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #f0f0f0;
+  }
+  
+  .your-stats-form input,
+  .your-stats-form select {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: none;
+    margin-top: 0.25rem;
+    font-size: 1rem;
+  }
+  
+  .your-stats-form input[type="checkbox"] {
+    margin-top: 0.5rem;
+    transform: scale(1.2);
+  }
+  
