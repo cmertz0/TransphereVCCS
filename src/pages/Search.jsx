@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './Search.css';
-import placeholderImg from '../assets/uva-campus.jpg';
 
 function deg2rad(deg) {
   return deg * (Math.PI / 180);
@@ -40,7 +39,6 @@ function Search({ addToList, myList }) {
   const colleges = [
     {
       name: 'University of Virginia',
-      image: placeholderImg,
       gpa: 3.8,
       location: 'Charlottesville, VA',
       type: 'Public',
@@ -51,7 +49,6 @@ function Search({ addToList, myList }) {
     },
     {
       name: 'George Mason University',
-      image: placeholderImg,
       gpa: 3.0,
       location: 'Fairfax, VA',
       type: 'Public',
@@ -62,7 +59,6 @@ function Search({ addToList, myList }) {
     },
     {
       name: 'Virginia Tech',
-      image: placeholderImg,
       gpa: 3.5,
       location: 'Blacksburg, VA',
       type: 'Public',
@@ -73,7 +69,6 @@ function Search({ addToList, myList }) {
     },
     {
       name: 'Washington and Lee University',
-      image: placeholderImg,
       gpa: 3.9,
       location: 'Lexington, VA',
       type: 'Private',
@@ -81,6 +76,106 @@ function Search({ addToList, myList }) {
       lat: 37.7840,
       lng: -79.4428,
       website: 'https://www.wlu.edu/',
+    },
+    {
+      name: 'Christopher Newport University',
+      gpa: 3.4,
+      location: 'Newport News, VA',
+      type: 'Public',
+      cost: '$20K',
+      lat: 37.0630,
+      lng: -76.4930,
+      website: 'https://www.cnu.edu/'
+    },
+    {
+      name: 'William and Mary',
+      gpa: 3.9,
+      location: 'Williamsburg, VA',
+      type: 'Public',
+      cost: '$30K',
+      lat: 37.2707,
+      lng: -76.7075,
+      website: 'https://www.wm.edu/'
+    },
+    {
+      name: 'James Madison University',
+      gpa: 3.4,
+      location: 'Harrisonburg, VA',
+      type: 'Public',
+      cost: '$21K',
+      lat: 38.4352,
+      lng: -78.8736,
+      website: 'https://www.jmu.edu/'
+    },
+    {
+      name: 'Liberty University',
+      gpa: 3.2,
+      location: 'Lynchburg, VA',
+      type: 'Private',
+      cost: '$28K',
+      lat: 37.3514,
+      lng: -79.1795,
+      website: 'https://www.liberty.edu/'
+    },
+    {
+      name: 'Longwood University',
+      gpa: 3.3,
+      location: 'Farmville, VA',
+      type: 'Public',
+      cost: '$19K',
+      lat: 37.3021,
+      lng: -78.3912,
+      website: 'https://www.longwood.edu/'
+    },
+    {
+      name: 'Marymount University',
+      gpa: 3.1,
+      location: 'Arlington, VA',
+      type: 'Private',
+      cost: '$31K',
+      lat: 38.8898,
+      lng: -77.1043,
+      website: 'https://www.marymount.edu/'
+    },
+    {
+      name: 'Old Dominion University',
+      gpa: 3.0,
+      location: 'Norfolk, VA',
+      type: 'Public',
+      cost: '$20K',
+      lat: 36.8855,
+      lng: -76.3055,
+      website: 'https://www.odu.edu/'
+    },
+    {
+      name: 'Radford University',
+      gpa: 3.0,
+      location: 'Radford, VA',
+      type: 'Public',
+      cost: '$18K',
+      lat: 37.1362,
+      lng: -80.5765,
+      website: 'https://www.radford.edu/'
+    },
+    {
+      name: 'Shenandoah University',
+      gpa: 3.2,
+      location: 'Winchester, VA',
+      type: 'Private',
+      cost: '$33K',
+      lat: 39.1857,
+      lng: -78.1633,
+      website: 'https://www.su.edu/'
+    },
+    {
+      name: 'Virginia Commonwealth University',
+      gpa: 3.2,
+      location: 'Richmond, VA',
+      type: 'Public',
+      cost: '$24K',
+      lat: 37.5483,
+      lng: -77.4538,
+      website: 'https://www.vcu.edu/'
     },
   ];
 
@@ -139,9 +234,7 @@ function Search({ addToList, myList }) {
           <option value="1000">Within 1000 km</option>
         </select>
 
-        <select disabled>
-          <option value="">More filters (coming soon)</option>
-        </select>
+        
       </div>
 
       <div className="college-list">
@@ -149,20 +242,17 @@ function Search({ addToList, myList }) {
           const isAdded = myList.some((c) => c.name === college.name);
           return (
             <div className="college-card" key={index}>
-              <img src={college.image} alt={college.name} />
               <div className="college-details">
                 <h3>{college.name}</h3>
                 <p>GPA: {college.gpa}</p>
                 <p>{college.location}</p>
                 <p>{college.type}</p>
                 <p>Estimated Cost: {college.cost}</p>
-                <div className="college-actions">
+                <div className="button-row">
                   {isAdded ? (
                     <button className="action-button added">✔ Added</button>
                   ) : (
-                    <button className="action-button" onClick={() => addToList(college)}>
-                      Add to My List
-                    </button>
+                    <button className="action-button" onClick={() => addToList(college)}>Add to My List</button>
                   )}
                   <a
                     href={college.website}

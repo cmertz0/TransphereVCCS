@@ -1,41 +1,51 @@
-/* global styles */
-body {
+/* Base Reset */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
   margin: 0;
+  padding: 0;
   font-family: 'Inter', sans-serif;
   background-color: #1e1e2f;
   color: #f4f4f4;
+  width: 100%;
 }
 
+/* App Wrapper */
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* header - very glitchy for some reason, will come back*/
+/* Navbar Full Width */
 .navbar {
   background-color: #2a2a40;
   width: 100%;
   padding: 1rem 2rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: center;
 }
 
+/* Properly space inside navbar */
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
+/* Brand Logo */
 .brand {
-  flex-shrink: 0;
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
 }
 
-
+/* Navigation Links */
 .nav-links {
   display: flex;
-  justify-content: center;
   gap: 2rem;
-  flex-grow: 1;
 }
 
 .nav-links a {
@@ -59,87 +69,22 @@ body {
   transform: scaleX(1);
 }
 
+/* Main Page Content */
 .main {
+  flex: 1;
   padding: 2rem;
-  flex-grow: 1;
+  width: 100%;
 }
 
-.top-right-auth {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  z-index: 10;
+/* Container for all main content pages */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.top-right-auth img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid white;
-  transition: transform 0.2s ease;
-}
-
-.top-right-auth img:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-
-.top-right-auth button {
-  background-color: #5f5fff;
-  color: white;
-  border: none;
-  border-radius: 999px;
-  padding: 0.5rem 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.top-right-auth button:hover {
-  background-color: #4a4ad4;
-}
-
-.auth-icon {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-}
-
-.auth-icon img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid white;
-  object-fit: cover;
-  margin-left: 1rem;
-  transition: transform 0.2s ease;
-}
-
-.auth-icon img:hover {
-  transform: scale(1.05);
-}
-
-.auth-icon button {
-  background-color: #5f5fff;
-  color: white;
-  border: none;
-  border-radius: 999px;
-  padding: 0.5rem 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.auth-icon button:hover {
-  background-color: #4a4ad4;
-}
-
-.auth-button {
-  flex-shrink: 0;
-}
-
-.profile-wrapper {
+/* Auth button & dropdown */
+.auth-section {
   position: relative;
 }
 
@@ -147,6 +92,8 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
   cursor: pointer;
 }
 
@@ -161,11 +108,6 @@ body {
   color: white;
   z-index: 100;
   min-width: 200px;
-}
-
-.profile-dropdown p {
-  margin: 0.5rem 0;
-  font-size: 0.9rem;
 }
 
 .profile-dropdown button {
@@ -183,3 +125,16 @@ body {
   background-color: #4a4ad4;
 }
 
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  width: 100%;
+  max-width: none;
+}

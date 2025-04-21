@@ -1,67 +1,123 @@
-.hero {
-    position: relative;
-    background-image: url('/uva-campus.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .hero-overlay {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-    padding: 3rem;
-    text-align: center;
-    color: #ffffff;
-    max-width: 800px;
-    width: 90%;
-    transition: box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    border-radius: 0px; /* flat corner */
-  }
-  
-  /* with mouse hover, show black glow and button */
-  .hero-overlay:hover {
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
-  }
-  
-  .hero-overlay h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-overlay p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-  }
-  
-  /* button - used on search + home pages */
-  .hero-button {
-    background-color: #5f5fff;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    position: absolute;
-    bottom: 1.5rem;
-    left: 50%;
-    transform: translate(-50%, 200%);
-    opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-  }
-  
-  /* slide button up on hover */
-  .hero-overlay:hover .hero-button {
-    transform: translate(-50%, 0%);
-    opacity: 1;
-  }
-  
+/* Home Page Styling */
+
+.home-wrapper {
+  width: 100%;
+  color: white;
+  background-color: #1e1e2f;
+}
+
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  max-width: 700px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-content:hover {
+  height: 300px;
+  padding-bottom: 4rem;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-content:hover .hero-button {
+  bottom: 0;
+  opacity: 1;
+}
+
+.cta-container {
+  position: relative;
+  height: 5rem;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.hero-button {
+  background-color: #5f5fff;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  bottom: -100%; /* hidden below */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+.hero-button:hover {
+  background-color: #4a4ad4;
+}
+
+.hover-slide-up:hover {
+  transform: translateY(-6px);
+}
+
+.how-it-works {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #161625;
+}
+
+.how-it-works h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.step-card {
+  background-color: #2a2a40;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 280px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.step-card h3 {
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.step-card p {
+  color: #cccccc;
+  font-size: 0.95rem;
+}
+
+.emoji {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
